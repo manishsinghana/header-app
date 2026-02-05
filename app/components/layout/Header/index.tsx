@@ -14,7 +14,7 @@ function Header() {
 
   const [isSearchExpended, setIsSearchExpended] = useState(false);
 
-  const mainNavRef = useRef();
+  const mainNavRef = useRef(null);
 
   const handleClick = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
@@ -34,7 +34,7 @@ function Header() {
           <Image
             src="/assets/images/dummy-logo.png"
             alt="brand logo"
-            fill="cover"
+            fill
           />
         </Link>
 
