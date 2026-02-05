@@ -1,0 +1,171 @@
+/* ------------------------
+Header CSS Start Here 
+--------------------------*/
+
+.header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 10px 0;
+  background-color: #153e4b;
+}
+
+.header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.header .brand-logo {
+  position: relative;
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-menu .menu-item {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  transition: 0.25s color ease;
+}
+
+.nav-menu .menu-item:hover {
+  color: #81d86f;
+}
+
+.header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header .left-con {
+  display: flex;
+  align-items: center;
+}
+
+.header-search-wrap {
+  position: relative;
+  transition: 0.25s all ease;
+  max-width: 230px;
+}
+
+.header-search-wrap input[type="text"] {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 15px;
+  background: #fff;
+  border-radius: 100px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.header-search-wrap .search-results {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.mobile-nav-toggle,
+.search-toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .header::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 24, 33, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    display: none;
+  }
+
+  .header.mobile-menu--open::before {
+    display: block;
+    opacity: 0.5;
+  }
+
+  .header.mobile-menu--open .main-navigation {
+    left: 0;
+  }
+  .header .brand-logo {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+  }
+  .main-navigation {
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    overflow-y: auto;
+    width: 250px;
+    top: 0;
+    left: -250px;
+    background-color: #153e4b;
+    transition: 0.4s ease;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .mobile-nav-toggle {
+    min-width: 20px;
+    display: inline-block;
+  }
+
+  .search-toggle{
+    display: inline-block;
+  }
+
+  .header-search-con{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .header-search-con .header-search-wrap{
+    display: none;
+  }
+
+  .header-search-con.search-expended .header-search-wrap{
+    display: inline-block;
+  }
+
+  .header .header-right {
+    gap: 15px;
+  }
+
+}
+
+/* ------------------------
+Header CSS End Here 
+--------------------------*/
